@@ -1,0 +1,34 @@
+{
+  "name": "Doe",
+  "firstName": "John",
+  "presentation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "experiences": [{
+    "title": "Job title",
+    "fromDate": "September 2000",
+    "toDate": "September 2023",
+    "employer": "Employer name",
+    "location": "Job location",
+    "description": "<ul><li>Task 1</li><li>Task 2</li></ul>"
+  }],
+  "skills": [{
+    "name": "Programming",
+    "value": "React"
+  }],
+  "education": [{
+    "title": "Diploma name",
+    "fromDate": "2000",
+    "toDate": "2003",
+    "school": "School name",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  }],
+  "contact": [{
+    "name": "Email",
+    "type": "email",
+    "value": "john.doe@example.org"
+  },
+  {
+    "name": "Github",
+    "type": "url",
+    "value": "example.org"
+  }]
+}
