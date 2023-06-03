@@ -29,10 +29,9 @@ function App() {
 
   return (
     <>{ data && <>
-          <Header/>
-          <Menu/>
+          <Header />
           <Content data={data}/>
-          <Footer/>
+          <Footer data={data} />
         </>
       }
     </>
