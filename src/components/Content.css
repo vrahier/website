@@ -1,0 +1,10 @@
+.contentDiv {
+  padding: 56px 0 0 ;
+  margin: 5% 5% 5% 5%;
+  text-align: center;
+}
+
+.picture {
+  border-radius: 50%;
+  max-width: 178px;
+}
