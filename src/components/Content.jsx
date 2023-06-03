@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import './Content.css';
+import Experience from './Experience';
 
 function Content({ data }) {
   return (
@@ -11,6 +12,14 @@ function Content({ data }) {
       </div>
       <div id="presentation">
         {data.presentation}
+      </div>
+      <div id="resume">
+        <h2>Resume</h2>
+        <h3>Work experience</h3>
+        {data.experiences.map((exp, index) => (
+          <Experience key={index} id={index} experience={exp} />
+        ))
+        }
       </div>
     </div>
   )
