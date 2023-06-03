@@ -31,7 +31,7 @@ function App() {
     <>{ data && <>
           <Header/>
           <Menu/>
-          <Content/>
+          <Content data={data}/>
           <Footer/>
         </>
       }
