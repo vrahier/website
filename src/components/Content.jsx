@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import './Content.css';
+import Education from './Education';
 import Experience from './Experience';
 import Skill from './Skill';
 
@@ -24,6 +25,10 @@ function Content({ data }) {
         <h3>Skills</h3>
         {data.skills.map((skill, index) => (
           <Skill key={index} skill={skill}/>
+        ))}
+        <h3>Education</h3>
+        {data.education.map((edu, index) => (
+          <Education key={index} id={index} education={edu} />
         ))}
       </div>
     </div>
