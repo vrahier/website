@@ -12,6 +12,7 @@ function Content({ data }) {
         <img className="picture" src="/picture.png"/>
       </div>
       <div id="presentation">
+        <h2>About me</h2>
         {data.presentation}
       </div>
       <div id="resume">
