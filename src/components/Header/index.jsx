@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import './index.css'
 
 function Header({currentSection, setCurrentSection}) {
@@ -8,11 +9,17 @@ function Header({currentSection, setCurrentSection}) {
     ["resume", "Resume"],
     ["contact", "Contact"]
   ];
-  const className = (id) => {
-    let cn = "menuItem";
-    cn += currentSection === id ? " activeItem": "";
-    return cn;
-  };
+
+  useEffect(() => {
+    let menuItems = document.getElementsByClassName('menuItem');
+    for (let i=0; i<menuItems.length; i++) {
+      if (menuItems[i].id === currentSection) {
+        menuItems[i].classList.add("activeItem");
+      } else {
+        menuItems[i].classList.remove("activeItem");
+      }
+    }
+  }, [currentSection]);
 
   return (
     <header>
@@ -21,7 +28,7 @@ function Header({currentSection, setCurrentSection}) {
           <li
             key={index}
             id={item[0]}
-            className={className(item[0])}
+            className="menuItem"
             onClick={() => setCurrentSection(item[0])}
           >{item[1]}</li>
         ))}

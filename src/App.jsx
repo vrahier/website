@@ -30,7 +30,7 @@ function App() {
   return (
     <>{ data && <>
           <Header currentSection={currentSection} setCurrentSection={setCurrentSection}/>
-          <Content data={data}/>
+          <Content data={data} currentSection={currentSection} setCurrentSection={setCurrentSection}/>
           <Footer data={data} />
         </>
       }

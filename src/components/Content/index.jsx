@@ -2,21 +2,22 @@ import { PropTypes } from 'prop-types';
 import './index.css';
 import Contact from '../Contact';
 import { Education, WorkExperience } from '../Experience';
+import Section from '../Section';
 import Skill from '../Skill';
 
-function Content({ data }) {
+function Content({ data, currentSection, setCurrentSection}) {
   return (
     <div className="contentDiv">
-      <div>
+      <Section id="home" currentSection={currentSection} setCurrentSection={setCurrentSection}>
         <h1>{data.firstName} {data.name}</h1>
         <h2>{data.jobTitle}</h2>
         <img className="picture" src="/picture.png"/>
-      </div>
-      <div id="presentation">
+      </Section>
+      <Section id="about" currentSection={currentSection} setCurrentSection={setCurrentSection}>
         <h2>About me</h2>
         {data.presentation}
-      </div>
-      <div id="resume">
+      </Section>
+      <Section id="resume" currentSection={currentSection} setCurrentSection={setCurrentSection}>
         <h2>Resume</h2>
         <h3>Work experience</h3>
         {data.experiences.map((exp, index) => (
@@ -31,13 +32,13 @@ function Content({ data }) {
         {data.education.map((edu, index) => (
           <Education key={index} id={index} education={edu} />
         ))}
-      </div>
-      <div id="contact">
+      </Section>
+      <Section id="contact" currentSection={currentSection} setCurrentSection={setCurrentSection}>
         <h2>Contact</h2>
         {data.contact.map((contact, index) => (
           <Contact key={index} contact={contact}/>
         ))}
-      </div>
+      </Section>
     </div>
   )
 }
