@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import './Contact.css';
 
 const CONTACT_CONF = {
   "email": ["Email", ""],
@@ -14,9 +13,9 @@ function Contact({contact}) {
     return `${contact.type === 'email' ? "mailto:" : ""}${contactValue}`;
   };
 
-  return <div className="contactContainer">
-    <div className="contactName">{contactName}</div>
-    <a className="contactValue" href={getHref()} target="_blank">{contact.value}</a>
+  return <div className="rowContainer">
+    <div className="rowName">{contactName}</div>
+    <a className="rowValue" href={getHref()} target="_blank">{contact.value}</a>
   </div>
 }
 

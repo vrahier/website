@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import './Skill.css';
 
 function Skill({skill}) {
-  return <div className="skillContainer">
-    <div className="skillName">{skill.name}</div>
-    <div className="skillValue">{skill.value}</div>
+  return <div className="rowContainer">
+    <div className="rowName">{skill.name}</div>
+    <div className="rowValue">{skill.value}</div>
   </div>
 }
 
