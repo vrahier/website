@@ -28,7 +28,7 @@ function Experience({id, title, company, fromDate, toDate, location, description
 }
 
 Experience.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   fromDate: PropTypes.string,
   toDate: PropTypes.string,
