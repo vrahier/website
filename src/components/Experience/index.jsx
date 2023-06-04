@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {PropTypes} from 'prop-types';
-import './Experience.css';
+import './index.css';
 
 function Experience({id, title, company, fromDate, toDate, location, description}) {
 

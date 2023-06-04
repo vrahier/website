@@ -1,8 +1,8 @@
 import { PropTypes } from 'prop-types';
 import './index.css';
-import Contact from './Contact';
-import { Education, WorkExperience } from './Experience';
-import Skill from './Skill';
+import Contact from '../Contact';
+import { Education, WorkExperience } from '../Experience';
+import Skill from '../Skill';
 
 function Content({ data }) {
   return (
