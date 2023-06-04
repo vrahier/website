@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import './index.css'
 
-function Header({currentSection, setCurrentSection}) {
+function Header({currentSection}) {
 
   const menuItems = [
     ["home", "Home"],
@@ -21,15 +21,29 @@ function Header({currentSection, setCurrentSection}) {
     }
   }, [currentSection]);
 
+  const handleClick = (e) => {
+    /**
+     * On menu item click, scroll to corresponding section.
+     * scrolling will update the current section state and
+     * consequently the active menu item.
+    **/
+    let header = document.getElementsByTagName('header')[0];
+    let div = document.getElementById(e.target.id.replace("#", ""));
+    window.scrollTo({
+      top: div.offsetTop - header.offsetHeight - 49 ,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <header>
         <ul className="menuList">
         { menuItems.map((item, index) => (
           <li
             key={index}
-            id={item[0]}
+            id={"#" + item[0]}
             className="menuItem"
-            onClick={() => setCurrentSection(item[0])}
+            onClick={handleClick}
           >{item[1]}</li>
         ))}
         </ul>
