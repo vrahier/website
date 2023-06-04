@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import './Content.css';
+import Contact from './Contact';
 import { Education, WorkExperience } from './Experience';
 import Skill from './Skill';
 
@@ -29,6 +30,12 @@ function Content({ data }) {
         <h3>Education</h3>
         {data.education.map((edu, index) => (
           <Education key={index} id={index} education={edu} />
+        ))}
+      </div>
+      <div id="contact">
+        <h2>Contact</h2>
+        {data.contact.map((contact, index) => (
+          <Contact key={index} contact={contact}/>
         ))}
       </div>
     </div>
