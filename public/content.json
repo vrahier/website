@@ -13,7 +13,10 @@
   }],
   "skills": [{
     "name": "Programming",
-    "value": "React"
+    "value": "React, HTML, CSS, Javascript"
+  }, {
+    "name": "Foo",
+    "value": "Bar"
   }],
   "education": [{
     "title": "Diploma name",
