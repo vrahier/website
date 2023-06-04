@@ -1,5 +1,5 @@
 import { PropTypes } from 'prop-types';
-import './Content.css';
+import './index.css';
 import Contact from './Contact';
 import { Education, WorkExperience } from './Experience';
 import Skill from './Skill';

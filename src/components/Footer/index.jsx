@@ -1,4 +1,4 @@
-import './Footer.css';
+import './index.css';
 import { PropTypes } from 'prop-types';
 
 function Footer({data}) {
