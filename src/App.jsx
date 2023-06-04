@@ -6,6 +6,7 @@ import Header from './components/Header';
 function App() {
 
   const [data, setData] = useState();
+  const [currentSection, setCurrentSection] = useState("home");
 
   const fetchData = () => {
     fetch('content.json',
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <>{ data && <>
-          <Header />
+          <Header currentSection={currentSection} setCurrentSection={setCurrentSection}/>
           <Content data={data}/>
           <Footer data={data} />
         </>
