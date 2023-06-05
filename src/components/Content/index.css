@@ -19,12 +19,16 @@
   height: 30px;
   width: 30px;
 }
+#scrollDown:hover {
+  color: #8AC4FF;
+  cursor: pointer;
+}
 @keyframes MoveUpDown {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
   }
 }
 
@@ -36,4 +40,10 @@
 #home {
   padding: 15vh 0 0 0;
   height: 100vh;
+}
+a {
+  color: #423E3B;
+}
+a:hover {
+  color: #8AC4FF;
 }

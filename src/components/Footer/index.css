@@ -3,4 +3,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  background: #423E3B;
 }
