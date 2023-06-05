@@ -9,15 +9,22 @@ function Content({ data, currentSection, setCurrentSection}) {
   const handleScroll = (e) => {
     /**
      * Detects which is current section.
-     * It looks for all sections that are overflowed by the
-     * header and takes the last one.
     **/
-    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-    var header = document.getElementsByTagName("header")[0];
     var sections = [...document.getElementsByClassName("section")];
-    var scrolled = sections.filter((sec) => {
-      return (sec.offsetTop < scrollTop + header.offsetHeight + 50)
-    })
+    var scrolled;
+    // Check if bottom is reached
+    // If reached, all the sections have been scrolled
+    // Else search for sections which are on the upper side
+    // on the screen
+    if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+        scrolled = sections;
+    } else {
+      var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      scrolled = sections.filter((sec) => {
+        return (sec.offsetTop < scrollTop + window.innerHeight / 2)
+      })
+    }
+
     var cur = scrolled.slice(-1)[0];
     var id = cur ? "#" + cur.id : "#home";
     if(id && id !== currentSection) {
