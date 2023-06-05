@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import { PropTypes } from 'prop-types';
 import './index.css';
 import Contact from '../Contact';
