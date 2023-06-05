@@ -41,10 +41,11 @@ function Content({ data, currentSection, setCurrentSection}) {
         <h1>{data.firstName} {data.name}</h1>
         <h2>{data.jobTitle}</h2>
         <img className="picture" src="/picture.png"/>
+        <div>{data.shortPresentation}</div>
       </div>
       <div id="about" className="section">
         <h2>About me</h2>
-        {data.presentation}
+        {data.about}
       </div>
       <div id="resume" className="section">
         <h2>Resume</h2>
@@ -77,7 +78,8 @@ Content.propTypes = {
     name: PropTypes.string.isRequired,
     firstName: PropTypes.string.isRequired,
     jobTitle: PropTypes.string,
-    presentation: PropTypes.string,
+    shortPresentation: PropTypes.string,
+    about: PropTypes.string,
     experiences: PropTypes.array.isRequired,
     skills: PropTypes.array.isRequired,
     education: PropTypes.array.isRequired,
@@ -86,7 +88,8 @@ Content.propTypes = {
 }
 Content.defaultProps = {
   data: {
-    presentation: "",
+    shortPresentation: "",
+    about: "",
     experiences: [],
     skills: [],
     education: [],
