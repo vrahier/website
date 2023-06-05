@@ -3,6 +3,7 @@ import './index.css';
 import Contact from '../Contact';
 import { Education, WorkExperience } from '../Experience';
 import Skill from '../Skill';
+import {scrollToDiv} from '../../utils';
 
 function Content({ data, currentSection, setCurrentSection}) {
   const handleScroll = (e) => {
@@ -32,6 +33,10 @@ function Content({ data, currentSection, setCurrentSection}) {
 
   };
 
+  const handleClick = () => {
+    scrollToDiv("about");
+  };
+
   window.addEventListener('scroll', handleScroll);
 
   return (
@@ -42,7 +47,7 @@ function Content({ data, currentSection, setCurrentSection}) {
         <img className="picture" src="/picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
         <div>{data.shortPresentation}</div>
         <div id="scrollContainer">
-          <svg id="scrollDown" viewBox="0 0 17 17">
+          <svg id="scrollDown" onClick={handleClick} viewBox="0 0 17 17">
             <g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 	transform="matrix(0 1 -1 0 17 0)">
               <circle cx="8.5" cy="8.5" r="8"/>
               <path d="m11.621 6.379v4.242h-4.242" transform="matrix(.70710678 .70710678 .70710678 -.70710678 	-3.227683 7.792317)"/>

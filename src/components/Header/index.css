@@ -9,6 +9,7 @@ header {
   justify-content: center;
   background: #423E3B;
   color: white;
+  border-bottom: 1px solid black;
 }
 
 .menuList {

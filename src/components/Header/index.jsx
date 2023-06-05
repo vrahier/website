@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import './index.css'
-
+import {scrollToDiv} from '../../utils';
 function Header({currentSection}) {
 
   const menuItems = [
@@ -27,12 +27,7 @@ function Header({currentSection}) {
      * scrolling will update the current section state and
      * consequently the active menu item.
     **/
-    let header = document.getElementsByTagName('header')[0];
-    let div = document.getElementById(e.target.id.replace("#", ""));
-    window.scrollTo({
-      top: div.offsetTop - header.offsetHeight - 49 ,
-      behavior: "smooth"
-    });
+    scrollToDiv(e.target.id.replace("#", ""));
   };
 
   return (
