@@ -39,7 +39,7 @@ function Content({ data, currentSection, setCurrentSection}) {
       <div id="home" className="section">
         <h1>{data.firstName} {data.name}</h1>
         <h2>{data.jobTitle}</h2>
-        <img className="picture" src="/picture.png"/>
+        <img className="picture" src="/picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
         <div>{data.shortPresentation}</div>
       </div>
       <div id="about" className="section">
