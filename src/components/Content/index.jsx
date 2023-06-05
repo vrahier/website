@@ -41,10 +41,19 @@ function Content({ data, currentSection, setCurrentSection}) {
         <h2>{data.jobTitle}</h2>
         <img className="picture" src="/picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
         <div>{data.shortPresentation}</div>
+        <div id="scrollContainer">
+          <svg id="scrollDown" viewBox="0 0 17 17">
+            <g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 	transform="matrix(0 1 -1 0 17 0)">
+              <circle cx="8.5" cy="8.5" r="8"/>
+              <path d="m11.621 6.379v4.242h-4.242" transform="matrix(.70710678 .70710678 .70710678 -.70710678 	-3.227683 7.792317)"/>
+              <path d="m8.5 4.5v8" transform="matrix(0 1 -1 0 17 0)"/>
+            </g>
+          </svg>
+        </div>
       </div>
       <div id="about" className="section">
         <h2>About me</h2>
-        {data.about}
+        <div className="text">{data.about}</div>
       </div>
       <div id="resume" className="section">
         <h2>Resume</h2>
@@ -53,10 +62,12 @@ function Content({ data, currentSection, setCurrentSection}) {
           <WorkExperience key={index} id={index} experience={exp} />
         ))
         }
+        <hr/>
         <h3>Skills</h3>
         {data.skills.map((skill, index) => (
           <Skill key={index} skill={skill}/>
         ))}
+        <hr/>
         <h3>Education</h3>
         {data.education.map((edu, index) => (
           <Education key={index} id={index} education={edu} />

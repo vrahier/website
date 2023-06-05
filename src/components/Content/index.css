@@ -1,10 +1,39 @@
 .contentDiv {
-  padding: 56px 0 0 ;
+  padding: 0 10vw 0 10vw;
   margin: 5% 5% 5% 5%;
   text-align: center;
+  max-width: 80vw;
 }
 
 .picture {
   border-radius: 50%;
+  margin: 2vh 0 2vh 0;
   max-width: 178px;
+}
+
+#scrollContainer {
+  padding-top: 25vh;
+}
+#scrollDown {
+  animation: MoveUpDown 1s linear infinite;
+  height: 30px;
+  width: 30px;
+}
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+.section {
+  padding-bottom: 25vh;
+}
+
+#home {
+  padding: 15vh 0 0 0;
+  height: 100vh;
 }

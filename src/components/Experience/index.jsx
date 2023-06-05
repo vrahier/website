@@ -21,7 +21,7 @@ function Experience({id, title, company, fromDate, toDate, location, description
       <div>
         {location}
       </div>
-      <div id={id} className="expDesc">
+      <div id={id} className="text">
         {description}
       </div>
     </div>
