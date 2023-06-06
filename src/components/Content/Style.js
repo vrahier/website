@@ -24,6 +24,10 @@ export const Picture = styled.img`
 export const Separator = styled.hr`
   margin: 5vh 20vw 5vh 20vw;
   opacity: 0.5;
+
+  @media only screen and (min-width: 1008px) {
+    margin: 5vh 10vw 5vh 10vw;
+  }
 `
 
 export const Section = styled.div`
