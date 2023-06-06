@@ -1,4 +1,5 @@
 import {colors} from '../../utils/style/colors';
+import {SvgButton} from '../../utils/style/Atoms';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -20,16 +21,9 @@ export const Section = styled.div`
   height: ${props => props.isFirst && "100vh"};
 `
 
-export const ScrollDown = styled.svg`
+export const ScrollDown = styled(SvgButton)`
   animation: MoveUpDown 1s linear infinite;
-  padding-top: 25vh;
-  height: 30px;
-  width: 30px;
-  cursor: pointer;
-
-  &:hover {
-    color: ${colors.accent};
-  }
+  margin-top: 25vh;
 
   @keyframes MoveUpDown {
     0%, 100% {
