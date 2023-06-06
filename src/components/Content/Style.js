@@ -1,4 +1,3 @@
-import {colors} from '../../utils/style/colors';
 import {SvgButton} from '../../utils/style/Atoms';
 import styled from 'styled-components';
 
