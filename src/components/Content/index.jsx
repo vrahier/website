@@ -69,16 +69,16 @@ function Content({ data, currentSection, setCurrentSection}) {
       </Section>
       <Section id="resume" ref={secResume}>
         <h1>Resume</h1>
+        <h2>Skills</h2>
+        {data.skills.map((skill, index) => (
+          <Skill key={index} skill={skill}/>
+        ))}
+        <Separator/>
         <h2>Work experience</h2>
         {data.experiences.map((exp, index) => (
           <WorkExperience key={index} id={index} experience={exp} />
         ))
         }
-        <Separator/>
-        <h2>Skills</h2>
-        {data.skills.map((skill, index) => (
-          <Skill key={index} skill={skill}/>
-        ))}
         <Separator/>
         <h2>Education</h2>
         {data.education.map((edu, index) => (
