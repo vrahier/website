@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
-import './index.css'
 import {scrollToDiv} from '../../utils';
+import { Menu, MenuItem, StyledHeader } from './Style';
 function Header({currentSection}) {
 
   const menuItems = [
@@ -10,16 +10,6 @@ function Header({currentSection}) {
     ["contact", "Contact"]
   ];
 
-  useEffect(() => {
-    let menuItems = document.getElementsByClassName('menuItem');
-    for (let i=0; i<menuItems.length; i++) {
-      if (menuItems[i].id === currentSection) {
-        menuItems[i].classList.add("activeItem");
-      } else {
-        menuItems[i].classList.remove("activeItem");
-      }
-    }
-  }, [currentSection]);
 
   const handleClick = (e) => {
     /**
@@ -31,18 +21,18 @@ function Header({currentSection}) {
   };
 
   return (
-    <header>
-        <ul className="menuList">
+    <StyledHeader>
+        <Menu>
         { menuItems.map((item, index) => (
-          <li
+          <MenuItem
             key={index}
             id={"#" + item[0]}
-            className="menuItem"
+            active={"#" + item[0] === currentSection}
             onClick={handleClick}
-          >{item[1]}</li>
+          >{item[1]}</MenuItem>
         ))}
-        </ul>
-    </header>
+        </Menu>
+    </StyledHeader>
   )
 }
 export default Header;

@@ -1,16 +1,23 @@
 import { PropTypes } from 'prop-types';
-import './index.css';
+import {useRef} from 'react';
 import Contact from '../Contact';
 import { Education, WorkExperience } from '../Experience';
 import Skill from '../Skill';
 import {scrollToDiv} from '../../utils';
 
+import {Container, Picture, ScrollDown, Section} from './Style';
+
 function Content({ data, currentSection, setCurrentSection}) {
+  const secHome = useRef();
+  const secAbout = useRef();
+  const secResume = useRef();
+  const secContact = useRef();
+
   const handleScroll = (e) => {
     /**
      * Detects which is current section.
     **/
-    var sections = [...document.getElementsByClassName("section")];
+    var sections = [secHome.current, secAbout.current, secResume.current, secContact.current];
     var scrolled;
     // Check if bottom is reached
     // If reached, all the sections have been scrolled
@@ -21,12 +28,12 @@ function Content({ data, currentSection, setCurrentSection}) {
     } else {
       var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
       scrolled = sections.filter((sec) => {
-        return (sec.offsetTop < scrollTop + window.innerHeight / 2)
+        return sec !== undefined && (sec.offsetTop < scrollTop + window.innerHeight / 2)
       })
     }
 
     var cur = scrolled.slice(-1)[0];
-    var id = cur ? "#" + cur.id : "#home";
+    var id = "#" + (cur ? cur.id : "home");
     if(id && id !== currentSection) {
       setCurrentSection(id)
     }
@@ -40,27 +47,27 @@ function Content({ data, currentSection, setCurrentSection}) {
   window.addEventListener('scroll', handleScroll);
 
   return (
-    <div className="contentDiv" onScroll={handleScroll}>
-      <div id="home" className="section">
+    <Container onScroll={handleScroll}>
+      <Section ref={secHome} isFirst={true} id="home">
         <h1>{data.firstName} {data.name}</h1>
         <h2>{data.jobTitle}</h2>
-        <img className="picture" src="/picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
+        <Picture src="/picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
         <div>{data.shortPresentation}</div>
         <div id="scrollContainer">
-          <svg id="scrollDown" onClick={handleClick} viewBox="0 0 17 17">
+          <ScrollDown onClick={handleClick} viewBox="0 0 17 17">
             <g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 	transform="matrix(0 1 -1 0 17 0)">
               <circle cx="8.5" cy="8.5" r="8"/>
               <path d="m11.621 6.379v4.242h-4.242" transform="matrix(.70710678 .70710678 .70710678 -.70710678 	-3.227683 7.792317)"/>
               <path d="m8.5 4.5v8" transform="matrix(0 1 -1 0 17 0)"/>
             </g>
-          </svg>
+          </ScrollDown>
         </div>
-      </div>
-      <div id="about" className="section">
+      </Section>
+      <Section id="about" ref={secAbout}>
         <h2>About me</h2>
         <div className="text">{data.about}</div>
-      </div>
-      <div id="resume" className="section">
+      </Section>
+      <Section id="resume" ref={secResume}>
         <h2>Resume</h2>
         <h3>Work experience</h3>
         {data.experiences.map((exp, index) => (
@@ -77,14 +84,14 @@ function Content({ data, currentSection, setCurrentSection}) {
         {data.education.map((edu, index) => (
           <Education key={index} id={index} education={edu} />
         ))}
-      </div>
-      <div id="contact" className="section">
+      </Section>
+      <Section id="contact" ref={secContact}>
         <h2>Contact</h2>
         {data.contact.map((contact, index) => (
           <Contact key={index} contact={contact}/>
         ))}
-      </div>
-    </div>
+      </Section>
+    </Container>
   )
 }
 
