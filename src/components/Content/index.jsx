@@ -5,7 +5,7 @@ import { Education, WorkExperience } from '../Experience';
 import Skill from '../Skill';
 import {scrollToDiv} from '../../utils';
 
-import {Container, Picture, ScrollDown, Section} from './Style';
+import {Container, Picture, ScrollDown, Section, Separator} from './Style';
 
 function Content({ data, currentSection, setCurrentSection}) {
   const secHome = useRef();
@@ -74,12 +74,12 @@ function Content({ data, currentSection, setCurrentSection}) {
           <WorkExperience key={index} id={index} experience={exp} />
         ))
         }
-        <hr/>
+        <Separator/>
         <h2>Skills</h2>
         {data.skills.map((skill, index) => (
           <Skill key={index} skill={skill}/>
         ))}
-        <hr/>
+        <Separator/>
         <h2>Education</h2>
         {data.education.map((edu, index) => (
           <Education key={index} id={index} education={edu} />

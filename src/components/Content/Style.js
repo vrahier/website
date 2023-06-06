@@ -15,6 +15,11 @@ export const Picture = styled.img`
   max-width: 178px;
 `
 
+export const Separator = styled.hr`
+  margin: 5vh 20vw 5vh 20vw;
+  opacity: 0.5;
+`
+
 export const Section = styled.div`
   padding-bottom: 25vh;
   padding-top: ${props => props.isFirst ? "15vh" : 0};
