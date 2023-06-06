@@ -5,7 +5,7 @@ import { Education, WorkExperience } from '../Experience';
 import Skill from '../Skill';
 import {scrollToDiv} from '../../utils';
 
-import {Container, Picture, ScrollDown, Section, Separator} from './Style';
+import {AboutText, Container, Picture, ScrollDown, Section, Separator} from './Style';
 
 function Content({ data, currentSection, setCurrentSection}) {
   const secHome = useRef();
@@ -65,7 +65,7 @@ function Content({ data, currentSection, setCurrentSection}) {
       </Section>
       <Section id="about" ref={secAbout}>
         <h1>About me</h1>
-        <div className="text">{data.about}</div>
+        <AboutText>{data.about}</AboutText>
       </Section>
       <Section id="resume" ref={secResume}>
         <h1>Resume</h1>

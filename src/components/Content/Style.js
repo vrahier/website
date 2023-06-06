@@ -2,6 +2,9 @@ import {colors} from '../../utils/style/colors';
 import {SvgButton} from '../../utils/style/Atoms';
 import styled from 'styled-components';
 
+export const AboutText = styled.div`
+  text-align: justify;
+`
 export const Container = styled.div`
   padding: 0 10vw 0 10vw;
   margin: 5% 5% 5% 5%;
