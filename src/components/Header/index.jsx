@@ -1,5 +1,4 @@
-import {useEffect} from 'react';
-import {scrollToDiv} from '../../utils';
+import {scrollToDiv} from '../../utils/scroll';
 import { Menu, MenuItem, StyledHeader } from './Style';
 function Header({currentSection}) {
 

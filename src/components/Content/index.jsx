@@ -3,7 +3,7 @@ import {useRef} from 'react';
 import Contact from '../Contact';
 import { Education, WorkExperience } from '../Experience';
 import Skill from '../Skill';
-import {scrollToDiv} from '../../utils';
+import {scrollToDiv} from '../../utils/scroll';
 
 import {AboutText, Container, Picture, ScrollDown, Section, Separator} from './Style';
 
