@@ -9,6 +9,10 @@ export const Container = styled.div`
   margin: 5% 5% 5% 5%;
   text-align: center;
   max-width: 80vw;
+
+  @media only screen and (min-width: 1008px) {
+    padding: 0 25vw 0 25vw;
+  }
 `
 
 export const Picture = styled.img`
