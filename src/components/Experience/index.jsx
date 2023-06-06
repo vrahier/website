@@ -1,8 +1,10 @@
 import {useEffect, useState} from 'react';
 import {PropTypes} from 'prop-types';
 import {Container, Description, MoreButton} from './Style';
+import {useTranslation} from 'react-i18next';
 
 function Experience({id, title, company, fromDate, toDate, location, description}) {
+  const {t} = useTranslation();
 
   const [showDescription, setShowDescription] = useState(false);
 
@@ -22,7 +24,7 @@ function Experience({id, title, company, fromDate, toDate, location, description
         <div>{location}</div>
         { description && (
           <>
-            <MoreButton onClick={handleClick}>see more ⏷</MoreButton>
+            <MoreButton onClick={handleClick}>{t("seeMore")} ⏷</MoreButton>
             <Description id={id} show={showDescription}>
               {description}
             </Description>

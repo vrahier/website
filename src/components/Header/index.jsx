@@ -1,12 +1,16 @@
 import {scrollToDiv} from '../../utils/scroll';
 import { Menu, MenuItem, StyledHeader } from './Style';
+import {useTranslation} from 'react-i18next';
+
 function Header({currentSection}) {
 
+  const {t} = useTranslation();
+
   const menuItems = [
-    ["home", "Home"],
-    ["about", "About"],
-    ["resume", "Resume"],
-    ["contact", "Contact"]
+    ["home", t("home")],
+    ["about", t("about")],
+    ["resume", t("resume")],
+    ["contact", t("contact")]
   ];
 
 

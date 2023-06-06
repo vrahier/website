@@ -4,10 +4,12 @@ import Contact from '../Contact';
 import { Education, WorkExperience } from '../Experience';
 import Skill from '../Skill';
 import {scrollToDiv} from '../../utils/scroll';
-
+import {useTranslation} from 'react-i18next';
 import {AboutText, Container, Picture, ScrollDown, Section, Separator} from './Style';
 
 function Content({ data, currentSection, setCurrentSection}) {
+
+  const {t} = useTranslation();
   const secHome = useRef();
   const secAbout = useRef();
   const secResume = useRef();
@@ -48,6 +50,7 @@ function Content({ data, currentSection, setCurrentSection}) {
 
   return (
     <Container onScroll={handleScroll}>
+
       <Section ref={secHome} isFirst={true} id="home">
         <h1>{data.firstName} {data.name}</h1>
         <h3>{data.jobTitle}</h3>
@@ -63,30 +66,33 @@ function Content({ data, currentSection, setCurrentSection}) {
           </ScrollDown>
         </div>
       </Section>
+
       <Section id="about" ref={secAbout}>
-        <h1>About me</h1>
+        <h1>{t("about")}</h1>
         <AboutText>{data.about}</AboutText>
       </Section>
+
       <Section id="resume" ref={secResume}>
-        <h1>Resume</h1>
-        <h2>Skills</h2>
+        <h1>{t("resume")}</h1>
+        <h2>{t("skills")}</h2>
         {data.skills.map((skill, index) => (
           <Skill key={index} skill={skill}/>
         ))}
         <Separator/>
-        <h2>Work experience</h2>
+        <h2>{t("workExperience")}</h2>
         {data.experiences.map((exp, index) => (
           <WorkExperience key={index} id={index} experience={exp} />
         ))
         }
         <Separator/>
-        <h2>Education</h2>
+        <h2>{t("education")}</h2>
         {data.education.map((edu, index) => (
           <Education key={index} id={index} education={edu} />
         ))}
       </Section>
+
       <Section id="contact" ref={secContact}>
-        <h1>Contact</h1>
+        <h1>{t("contact")}</h1>
         <Contact
           firstName={data.firstName}
           name={data.name}

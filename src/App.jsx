@@ -1,39 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import {useTranslation} from 'react-i18next';
 
 function App() {
 
-  const [data, setData] = useState();
   const [currentSection, setCurrentSection] = useState("#home");
-
-  const fetchData = () => {
-    fetch('content.json',
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
-      }
-    ).then((response) => {
-      return response.json();
-    }).then((jsonResponse) => {
-      setData(jsonResponse);
-    });
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const {t} = useTranslation();
 
   return (
-    <>{ data && <>
-          <Header currentSection={currentSection}/>
-          <Content data={data} currentSection={currentSection} setCurrentSection={setCurrentSection}/>
-          <Footer data={data} />
-        </>
-      }
+    <>
+      <Header currentSection={currentSection}/>
+      <Content data={t("data", {returnObjects: true})} currentSection={currentSection} setCurrentSection={setCurrentSection}/>
+      <Footer data={t("data", {returnObjects: true})} />
     </>
   )
 }
