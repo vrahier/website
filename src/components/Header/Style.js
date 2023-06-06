@@ -21,6 +21,7 @@ export const Menu = styled.ul`
 `
 
 export const MenuItem = styled.li`
+  font-family: 'SparkyStonesRegular';
   display: inline-block;
   margin: 8px 5vw 0 5vw;
   cursor: pointer;

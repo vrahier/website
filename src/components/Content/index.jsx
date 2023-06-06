@@ -50,7 +50,7 @@ function Content({ data, currentSection, setCurrentSection}) {
     <Container onScroll={handleScroll}>
       <Section ref={secHome} isFirst={true} id="home">
         <h1>{data.firstName} {data.name}</h1>
-        <h2>{data.jobTitle}</h2>
+        <h3>{data.jobTitle}</h3>
         <Picture src="/picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
         <div>{data.shortPresentation}</div>
         <div id="scrollContainer">
@@ -64,29 +64,29 @@ function Content({ data, currentSection, setCurrentSection}) {
         </div>
       </Section>
       <Section id="about" ref={secAbout}>
-        <h2>About me</h2>
+        <h1>About me</h1>
         <div className="text">{data.about}</div>
       </Section>
       <Section id="resume" ref={secResume}>
-        <h2>Resume</h2>
-        <h3>Work experience</h3>
+        <h1>Resume</h1>
+        <h2>Work experience</h2>
         {data.experiences.map((exp, index) => (
           <WorkExperience key={index} id={index} experience={exp} />
         ))
         }
         <hr/>
-        <h3>Skills</h3>
+        <h2>Skills</h2>
         {data.skills.map((skill, index) => (
           <Skill key={index} skill={skill}/>
         ))}
         <hr/>
-        <h3>Education</h3>
+        <h2>Education</h2>
         {data.education.map((edu, index) => (
           <Education key={index} id={index} education={edu} />
         ))}
       </Section>
       <Section id="contact" ref={secContact}>
-        <h2>Contact</h2>
+        <h1>Contact</h1>
         {data.contact.map((contact, index) => (
           <Contact key={index} contact={contact}/>
         ))}
