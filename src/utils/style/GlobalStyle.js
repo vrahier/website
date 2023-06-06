@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'SparkyStonesRegular';
     src: local('SparkyStonesRegular'), url(${SparkyStonesRegular}) format('opentype');
   }
+
   body {
     margin: 0;
     font-family: 'Draftside';
@@ -26,11 +27,9 @@ export const GlobalStyle = createGlobalStyle`
     color: ${colors.primary};
 
   }
+
   h1, h2 {
   font-family: 'SparkyStonesRegular';
-  }
-  .text {
-    text-align: justify;
   }
 
   a {
@@ -39,24 +38,4 @@ export const GlobalStyle = createGlobalStyle`
   a:hover {
     color: ${colors.accent};
   }
-  /*
-   * Rows
-  */
-  .rowContainer {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2vh;
-  }
-  .rowName {
-    flex: 1;
-    display: flex;
-    max-width: 30vw;
-    font-weight: bold;
-    margin-bottom: 1vh;
-  }
-  .rowValue {
-    flex: 1;
-    display: flex;
-    text-align: left;
-}
 `
