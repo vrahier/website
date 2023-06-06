@@ -1,30 +1,35 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {PropTypes} from 'prop-types';
-import './index.css';
+import {Container, Description, MoreButton} from './Style';
 
 function Experience({id, title, company, fromDate, toDate, location, description}) {
 
-  useEffect(() => {
-    document.getElementById(id).innerHTML = description;
-  }, [])
+  const [showDescription, setShowDescription] = useState(false);
 
-  return <div className="container">
-      <div className="expTitle">
+  useEffect(() => {
+    if (!description) {
+      return;
+    }
+    document.getElementById(id).innerHTML = description;
+  }, [description, id])
+
+  const handleClick = () => setShowDescription(!showDescription);
+
+  return <Container>
         <h3>{title}</h3>
-      </div>
-      <div>
-        {company}
-      </div>
-      <div className="expDates">
-        {fromDate}-{toDate}
-      </div>
-      <div>
-        {location}
-      </div>
-      <div id={id} className="text">
-        {description}
-      </div>
-    </div>
+        <div>{company}</div>
+        <div>{fromDate}-{toDate}</div>
+        <div>{location}</div>
+        { description && (
+          <>
+            <MoreButton onClick={handleClick}>see more ⏷</MoreButton>
+            <Description id={id} show={showDescription}>
+              {description}
+            </Description>
+          </>
+         )
+       }
+    </Container>
 }
 
 Experience.propTypes = {
