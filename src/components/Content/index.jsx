@@ -119,7 +119,7 @@ Content.defaultProps = {
     experiences: [],
     skills: [],
     education: [],
-    contact: []
+    links: []
   }
 }
 export default Content;
