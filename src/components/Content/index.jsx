@@ -87,9 +87,12 @@ function Content({ data, currentSection, setCurrentSection}) {
       </Section>
       <Section id="contact" ref={secContact}>
         <h1>Contact</h1>
-        {data.contact.map((contact, index) => (
-          <Contact key={index} contact={contact}/>
-        ))}
+        <Contact
+          firstName={data.firstName}
+          name={data.name}
+          email={data.email}
+          links={data.links}
+        />
       </Section>
     </Container>
   )
@@ -100,12 +103,13 @@ Content.propTypes = {
     name: PropTypes.string.isRequired,
     firstName: PropTypes.string.isRequired,
     jobTitle: PropTypes.string,
+    email: PropTypes.string,
     shortPresentation: PropTypes.string,
     about: PropTypes.string,
     experiences: PropTypes.array.isRequired,
     skills: PropTypes.array.isRequired,
     education: PropTypes.array.isRequired,
-    contact: PropTypes.array.isRequired
+    links: PropTypes.array.isRequired
   }).isRequired
 }
 Content.defaultProps = {
