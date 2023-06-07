@@ -54,7 +54,7 @@ function Content({ data, currentSection, setCurrentSection}) {
       <Section ref={secHome} isFirst={true} id="home">
         <h1>{data.firstName} {data.name}</h1>
         <h3>{data.jobTitle}</h3>
-        <Picture src="/picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
+        <Picture src="picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
         <div>{data.shortPresentation}</div>
         <div id="scrollContainer">
           <ScrollDown onClick={handleClick} viewBox="0 0 17 17">
