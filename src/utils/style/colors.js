@@ -1,6 +1,11 @@
-export const colors = {
-  "backgroundTop": "#e3e3e3",
-  "backgroundBottom": "#ffb88e",
-  "primary": "#423E3B",
-  "accent": "#8AC4FF"
-}
+export const colors = await fetch(
+  'colors.json', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+}).then((response) => {
+  return response.json();
+}).then((json) => {
+  return json;
+})

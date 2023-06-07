@@ -4,13 +4,14 @@ import reportWebVitals from './reportWebVitals';
 
 import './i18n';
 import App from './App';
+import {colors} from './utils/style/colors';
 import {GlobalStyle} from './utils/style/GlobalStyle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App/>
+    {colors && <App/>}
   </React.StrictMode>
 );
 
