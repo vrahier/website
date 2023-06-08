@@ -1,0 +1,34 @@
+name: Build and deploy website to server
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Project
+        run: npm run build
+      - name: Create production artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: website
+          path: website/build/
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: website
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT }}  -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      - name: Deploy with rsync
+        run: rsync -avz -e 'ssh -p ${{ secrets.SSH_PORT }}' ./*  ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.INSTALL_DIR }}
