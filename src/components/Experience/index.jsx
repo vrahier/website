@@ -20,7 +20,7 @@ function Experience({id, title, company, fromDate, toDate, location, description
   return <Container>
         <h3>{title}</h3>
         <div>{company}</div>
-        <div>{fromDate}-{toDate}</div>
+        <div>{fromDate}{ toDate && "-" + toDate }</div>
         <div>{location}</div>
         { description && (
           <>
@@ -37,7 +37,7 @@ function Experience({id, title, company, fromDate, toDate, location, description
 Experience.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  fromDate: PropTypes.string,
+  fromDate: PropTypes.string.isRequired,
   toDate: PropTypes.string,
   company: PropTypes.string,
   location: PropTypes.string,
