@@ -16,7 +16,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: website
-          path: website/build/
+          path: build/
   deploy:
     runs-on: ubuntu-latest
     needs: build
