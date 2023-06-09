@@ -28,6 +28,10 @@ export const GlobalStyle = createGlobalStyle`
 
   }
 
+  h1 {
+    font-size: 60px;
+  }
+
   h1, h2 {
   font-family: 'SparkyStonesRegular';
   }
