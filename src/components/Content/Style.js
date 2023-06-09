@@ -38,7 +38,7 @@ export const Section = styled.div`
 
 export const ScrollDown = styled(SvgButton)`
   animation: MoveUpDown 1s linear infinite;
-  margin-top: 25vh;
+  margin-top: 30vh;
 
   @keyframes MoveUpDown {
     0%, 100% {
