@@ -5,8 +5,9 @@ export const AboutText = styled.div`
   text-align: justify;
 `
 export const Container = styled.div`
-  padding: 0 10vw 0 10vw;
-  margin: 5% 5% 5% 5%;
+  position: relative;
+  top: 56px;
+  padding: 0 10vw 10vh 10vw;
   text-align: center;
   max-width: 80vw;
 
