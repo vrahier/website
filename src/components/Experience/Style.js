@@ -20,6 +20,7 @@ export const MoreButton = styled.button`
   border: 0;
   width: fit-content;
   align-self: center;
+  color: ${colors.text};
 
   &:hover {
     color: ${colors.accent}
