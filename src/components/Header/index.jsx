@@ -1,5 +1,5 @@
 import {scrollToDiv} from '../../utils/scroll';
-import { Menu, MenuItem, StyledHeader } from './Style';
+import { Menu, MenuBackground, MenuContainer, MenuItem, StyledHeader } from './Style';
 import {useTranslation} from 'react-i18next';
 
 function Header({currentSection}) {
