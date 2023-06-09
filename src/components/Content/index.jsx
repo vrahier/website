@@ -66,40 +66,42 @@ function Content({ data, currentSection, setCurrentSection}) {
         </div>
       </Section>
 
-      <Section id="about" ref={secAbout}>
-        <h2>{t("about")}</h2>
-        <Picture src="picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
-        <AboutText>{data.about}</AboutText>
-      </Section>
+      <SectionsContainer>
+        <Section id="about" ref={secAbout} color="#93BDD5">
+          <h2>{t("about")}</h2>
+          <Picture src="picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
+          <AboutText>{data.about}</AboutText>
+        </Section>
 
-      <Section id="resume" ref={secResume}>
-        <h2>{t("resume")}</h2>
-        <h3>{t("skills")}</h3>
-        {data.skills.map((skill, index) => (
-          <Skill key={index} skill={skill}/>
-        ))}
-        <Separator/>
-        <h3>{t("workExperience")}</h3>
-        {data.experiences.map((exp, index) => (
-          <WorkExperience key={index} id={index} experience={exp} />
-        ))
-        }
-        <Separator/>
-        <h3>{t("education")}</h3>
-        {data.education.map((edu, index) => (
-          <Education key={index} id={index} education={edu} />
-        ))}
-      </Section>
+        <Section id="resume" ref={secResume} color="#B15235">
+          <h2>{t("resume")}</h2>
+          <h3>{t("skills")}</h3>
+          {data.skills.map((skill, index) => (
+            <Skill key={index} skill={skill}/>
+          ))}
+          <Separator/>
+          <h3>{t("workExperience")}</h3>
+          {data.experiences.map((exp, index) => (
+            <WorkExperience key={index} id={index} experience={exp} />
+          ))
+          }
+          <Separator/>
+          <h3>{t("education")}</h3>
+          {data.education.map((edu, index) => (
+            <Education key={index} id={index} education={edu} />
+          ))}
+        </Section>
 
-      <Section id="contact" ref={secContact}>
-        <h2>{t("contact")}</h2>
-        <Contact
-          firstName={data.firstName}
-          name={data.name}
-          email={data.email}
-          links={data.links}
-        />
-      </Section>
+        <Section id="contact" ref={secContact} color="#D6B4B9">
+          <h2>{t("contact")}</h2>
+          <Contact
+            firstName={data.firstName}
+            name={data.name}
+            email={data.email}
+            links={data.links}
+          />
+        </Section>
+      </SectionsContainer>
     </Container>
   )
 }

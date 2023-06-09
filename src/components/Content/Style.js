@@ -32,9 +32,19 @@ export const Separator = styled.hr`
 `
 
 export const Section = styled.div`
-  padding-bottom: 25vh;
-  padding-top: ${props => props.isFirst ? "15vh" : 0};
-  height: ${props => props.isFirst && "100vh"};
+  text-align: center;
+  padding: 10vh 10vw 0 10vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+`
+
+export const SectionsContainer = styled.div`
+  width: 100%;
+  background: #00000085;
 `
 
 export const ScrollDown = styled(SvgButton)`
