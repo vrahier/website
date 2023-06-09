@@ -73,26 +73,26 @@ function Content({ data, currentSection, setCurrentSection}) {
       </Section>
 
       <Section id="resume" ref={secResume}>
-        <h1>{t("resume")}</h1>
-        <h2>{t("skills")}</h2>
+        <h2>{t("resume")}</h2>
+        <h3>{t("skills")}</h3>
         {data.skills.map((skill, index) => (
           <Skill key={index} skill={skill}/>
         ))}
         <Separator/>
-        <h2>{t("workExperience")}</h2>
+        <h3>{t("workExperience")}</h3>
         {data.experiences.map((exp, index) => (
           <WorkExperience key={index} id={index} experience={exp} />
         ))
         }
         <Separator/>
-        <h2>{t("education")}</h2>
+        <h3>{t("education")}</h3>
         {data.education.map((edu, index) => (
           <Education key={index} id={index} education={edu} />
         ))}
       </Section>
 
       <Section id="contact" ref={secContact}>
-        <h1>{t("contact")}</h1>
+        <h2>{t("contact")}</h2>
         <Contact
           firstName={data.firstName}
           name={data.name}
