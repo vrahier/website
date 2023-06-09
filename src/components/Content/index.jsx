@@ -54,7 +54,6 @@ function Content({ data, currentSection, setCurrentSection}) {
       <Section ref={secHome} isFirst={true} id="home">
         <h1>{data.firstName} {data.name}</h1>
         <h3>{data.jobTitle}</h3>
-        <Picture src="picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
         <div>{data.shortPresentation}</div>
         <div id="scrollContainer">
           <ScrollDown onClick={handleClick} viewBox="0 0 17 17">
@@ -68,7 +67,8 @@ function Content({ data, currentSection, setCurrentSection}) {
       </Section>
 
       <Section id="about" ref={secAbout}>
-        <h1>{t("about")}</h1>
+        <h2>{t("about")}</h2>
+        <Picture src="picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
         <AboutText>{data.about}</AboutText>
       </Section>
 
