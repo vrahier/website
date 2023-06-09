@@ -6,5 +6,6 @@
   "text": "white",
   "menu": "black",
   "pictureBorder": "white",
-  "sectionsBackground": "#00000085"
+  "sectionsBackground": "#00000085",
+  "footerBackground": "black"
 }
