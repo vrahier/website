@@ -25,8 +25,8 @@ function Header({currentSection}) {
 
   return (
     <StyledHeader>
-        <MenuBackground/>
         <MenuContainer>
+          <MenuBackground/>
           <Menu>
           { menuItems.map((item, index) => (
             <MenuItem
