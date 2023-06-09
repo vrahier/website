@@ -4,17 +4,6 @@ import styled from 'styled-components';
 export const AboutText = styled.div`
   text-align: justify;
 `
-export const Container = styled.div`
-  position: relative;
-  top: 56px;
-  padding: 0 10vw 10vh 10vw;
-  text-align: center;
-  max-width: 80vw;
-
-  @media only screen and (min-width: 1008px) {
-    padding: 0 25vw 0 25vw;
-  }
-`
 
 export const Picture = styled.img`
   border-radius: 50%;

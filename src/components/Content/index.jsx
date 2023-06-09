@@ -49,7 +49,7 @@ function Content({ data, currentSection, setCurrentSection}) {
   window.addEventListener('scroll', handleScroll);
 
   return (
-    <Container onScroll={handleScroll}>
+    <div onScroll={handleScroll}>
 
       <Section ref={secHome} isFirst={true} id="home">
         <h1>{data.firstName} {data.name}</h1>
@@ -102,7 +102,7 @@ function Content({ data, currentSection, setCurrentSection}) {
           />
         </Section>
       </SectionsContainer>
-    </Container>
+    </div>
   )
 }
 
