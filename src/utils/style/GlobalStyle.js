@@ -22,8 +22,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Draftside';
-    background: ${colors.backgroundBottom};
-    background: linear-gradient(0deg, ${colors.backgroundBottom} 0%, ${colors.backgroundTop} 100%);
+    background: url('background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
     color: ${colors.primary};
 
   }
@@ -37,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${colors.primary};
+    color: ${colors.text};
   }
   a:hover {
     color: ${colors.accent};
