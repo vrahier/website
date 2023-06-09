@@ -51,7 +51,7 @@ function Content({ data, currentSection, setCurrentSection}) {
   return (
     <div onScroll={handleScroll}>
 
-      <Section ref={secHome} isFirst={true} id="home">
+      <Section ref={secHome} id="home">
         <h1>{data.firstName} {data.name}</h1>
         <h3>{data.jobTitle}</h3>
         <div>{data.shortPresentation}</div>
