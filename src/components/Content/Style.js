@@ -20,7 +20,7 @@ export const Picture = styled.img`
   border-radius: 50%;
   margin: 2vh 0 2vh 0;
   max-width: 178px;
-  border: 1px solid ${colors.picture};
+  border: 1px solid ${colors.pictureBorder};
 `
 
 export const Separator = styled.hr`
@@ -40,12 +40,12 @@ export const Section = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: ${colors.text};
 `
 
 export const SectionsContainer = styled.div`
   width: 100%;
-  background: #00000085;
+  background: ${colors.sectionsBackground};
 `
 
 export const ScrollDown = styled(SvgButton)`
