@@ -25,16 +25,19 @@ function Header({currentSection}) {
 
   return (
     <StyledHeader>
-        <Menu>
-        { menuItems.map((item, index) => (
-          <MenuItem
-            key={index}
-            id={"#" + item[0]}
-            active={"#" + item[0] === currentSection}
-            onClick={handleClick}
-          >{item[1]}</MenuItem>
-        ))}
-        </Menu>
+        <MenuBackground/>
+        <MenuContainer>
+          <Menu>
+          { menuItems.map((item, index) => (
+            <MenuItem
+              key={index}
+              id={"#" + item[0]}
+              active={"#" + item[0] === currentSection}
+              onClick={handleClick}
+            >{item[1]}</MenuItem>
+          ))}
+          </Menu>
+        </MenuContainer>
     </StyledHeader>
   )
 }
