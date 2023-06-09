@@ -3,5 +3,6 @@
   "backgroundBottom": "#ffc054",
   "primary": "black",
   "accent": "#5493FF",
-  "text": "white"
+  "text": "white",
+  "menu": "black"
 }

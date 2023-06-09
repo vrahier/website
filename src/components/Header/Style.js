@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   height: 56px;
   z-index: 100;
-  color: ${colors.primary};
+  color: ${colors.menu};
 `
 
 export const MenuBackground = styled.div`
@@ -43,7 +43,7 @@ export const MenuItem = styled.li`
     display: block;
     width: ${props => props.active ? '100%': 0};
     height: 3px;
-    background: ${colors.primary};
+    background: ${colors.menu};
     margin-top: 5px;
     transition: width .4s ease-in;
   }
