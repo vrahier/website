@@ -30,6 +30,11 @@ export const Section = styled.div`
   justify-content: center;
   align-items: center;
   color: ${colors.text};
+
+  @media only screen and (min-width: 1008px) {
+    padding: 6vh 25vw 0 25vw;
+    min-height: 94vh;
+  }
 `
 
 export const SectionsContainer = styled.div`
