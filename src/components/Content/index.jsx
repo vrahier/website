@@ -5,7 +5,7 @@ import { Education, WorkExperience } from '../Experience';
 import Skill from '../Skill';
 import {scrollToDiv} from '../../utils/scroll';
 import {useTranslation} from 'react-i18next';
-import {AboutText, Container, Picture, ScrollDown, Section, Separator} from './Style';
+import {AboutText, Picture, ScrollDown, Section, SectionsContainer, Separator} from './Style';
 
 function Content({ data, currentSection, setCurrentSection}) {
 
