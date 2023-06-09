@@ -1,6 +1,6 @@
 import {SvgButton} from '../../utils/style/Atoms';
+import {colors} from '../../utils/style/colors';
 import styled from 'styled-components';
-
 export const AboutText = styled.div`
   text-align: justify;
 `
@@ -20,6 +20,7 @@ export const Picture = styled.img`
   border-radius: 50%;
   margin: 2vh 0 2vh 0;
   max-width: 178px;
+  border: 1px solid ${colors.picture};
 `
 
 export const Separator = styled.hr`
