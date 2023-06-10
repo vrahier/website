@@ -6,14 +6,14 @@ export const ChangeLanguageButton = styled.button`
   border: 0;
   padding: 0;
   margin: 1vw;
-  color: white;
+  color: ${colors.text};
 
   &:after {
     content: '';
     display: block;
     width: 0;
     height: 1px;
-    background: white;
+    background: ${colors.text};
     margin-top: 5px;
     transition: width .4s ease-in;
   }
@@ -29,6 +29,6 @@ export const StyledFooter = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  background: ${colors.primary};
+  color: ${colors.text};
+  background: ${colors.footerBackground};
 `

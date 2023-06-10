@@ -27,6 +27,9 @@ function Footer({data}) {
   }, []);
 
   return <StyledFooter>
+    {
+      data.extraFooter.map((e) => <div>{e}</div>)
+    }
     <div>
     {
       availableLng
@@ -42,7 +45,13 @@ function Footer({data}) {
 Footer.propTypes = {
   data: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    firstName: PropTypes.string.isRequired
+    firstName: PropTypes.string.isRequired,
+    extraFooter: PropTypes.array.isRequired
   }).isRequired
+}
+Footer.defaultProps = {
+  data: {
+    extraFooter: []
+  }
 }
 export default Footer;
