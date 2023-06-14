@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
+import {Suspense} from 'react';
 
 import './i18n';
 import App from './App';
 import {colors} from './utils/style/colors';
 import {GlobalStyle} from './utils/style/GlobalStyle';
+import {Loading} from './utils/style/Atoms';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     { colors &&
       <>
-        <GlobalStyle />
-        <App />
+        <Suspense fallback={<Loading/>}>
+          <GlobalStyle />
+          <App />
+        </Suspense>
       </>
     }
   </React.StrictMode>

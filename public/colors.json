@@ -7,5 +7,7 @@
   "menu": "black",
   "pictureBorder": "white",
   "sectionsBackground": "#00000085",
-  "footerBackground": "black"
+  "footerBackground": "black",
+  "loader1": "yellow",
+  "loader2": "red"
 }
