@@ -1,5 +1,5 @@
 import {scrollToDiv} from '../../utils/scroll';
-import { Menu, MenuBackground, MenuContainer, MenuItem, StyledHeader } from './Style';
+import { Menu, MenuContainer, MenuItem, StyledHeader } from './Style';
 import {useTranslation} from 'react-i18next';
 
 function Header({currentSection}) {
@@ -26,7 +26,6 @@ function Header({currentSection}) {
   return (
     <StyledHeader>
         <MenuContainer>
-          <MenuBackground/>
           <Menu>
           { menuItems.map((item, index) => (
             <MenuItem
