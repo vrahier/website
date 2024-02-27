@@ -1,39 +1,46 @@
 import {SvgButton} from '../../utils/style/Atoms';
 import {colors} from '../../utils/style/colors';
 import styled from 'styled-components';
+
 export const AboutText = styled.div`
   text-align: justify;
 `
 
 export const Picture = styled.img`
+  margin-bottom: 10vh;
   border-radius: 50%;
-  margin: 2vh 0 2vh 0;
   max-width: 178px;
   border: 1px solid ${colors.pictureBorder};
 `
 
-export const Separator = styled.hr`
-  margin: 5vh 20vw 5vh 20vw;
-  opacity: 0.5;
+export const HomeSection = styled.div`
+text-align: center;
+padding: 10vh 10vw 0 10vw;
+min-height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: ${colors.text};
 
-  @media only screen and (min-width: 1008px) {
-    margin: 5vh 10vw 5vh 10vw;
-  }
+@media only screen and (min-width: 1008px) {
+  padding: 6vh 25vw 0 25vw;
+  min-height: 94vh;
+}
 `
 
 export const Section = styled.div`
   text-align: center;
-  padding: 10vh 10vw 0 10vw;
-  min-height: 90vh;
+  padding: 20vh 10vw 0 10vw;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: ${colors.text};
 
-  @media only screen and (min-width: 1008px) {
-    padding: 6vh 25vw 0 25vw;
-    min-height: 94vh;
+  @media only screen and (min-width: 769px) {
+    padding: 20vh 25vw 0 25vw;
+    min-height: 80vh;
   }
 `
 
