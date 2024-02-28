@@ -1,11 +1,12 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import {SkillName, SkillValue} from './Style';
+import './Skill.css';
 
-function Skill({skill}) {
+function Skill({ skill }) {
   return <>
-    <SkillName>{skill.name}</SkillName>
-    <SkillValue>{skill.value}</SkillValue>
-  </>
+    <div className='skill-name'>{skill.name}</div>
+    <div className='skill-value'>{skill.value}</div>
+  </>;
 }
 
 Skill.propTypes = {
@@ -13,5 +14,5 @@ Skill.propTypes = {
     name: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired
   }).isRequired
-}
+};
 export default Skill;

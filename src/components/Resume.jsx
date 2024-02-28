@@ -1,16 +1,18 @@
+import React from 'react';
+import { PropTypes } from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { SvgButton } from '../utils/style/Atoms';
 import { Education, WorkExperience } from './Experience';
-import './Resume.css';
 import Skill from './Skill';
+import './Resume.css';
 
 const Resume = ({ data }) => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   
   return (
     <div className='resume'>
       <div className='sub-section'>
-        <h1 className='title title-left'>{t("skills")}</h1>
+        <h1 className='title title-left'>{t('skills')}</h1>
         <div className='content'>
           {data.skills.map((skill, index) => (
             <Skill key={index} skill={skill}/>
@@ -19,10 +21,10 @@ const Resume = ({ data }) => {
       </div>
 
       <div className='sub-section reverse'>
-        <h1 className='title'>{t("workExperience")}</h1>
+        <h1 className='title'>{t('workExperience')}</h1>
         <div className='content content-left'>
           {data.experiences.map((exp, index) => (
-            <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'right', gap: '1vw'}}>
+            <div key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'right', gap: '1vw' }}>
               <WorkExperience key={index} id={index} experience={exp} />
               <SvgButton viewBox="0 0 17 17">
                 <g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 	transform="matrix(0 1 -1 0 17 0)">
@@ -38,7 +40,7 @@ const Resume = ({ data }) => {
       </div>
 
       <div className='sub-section'>
-        <h1 className='title title-left'>{t("education")}</h1>
+        <h1 className='title title-left'>{t('education')}</h1>
         <div className='content'>
           {data.education.map((edu, index) => (
             <Education key={index} id={index} education={edu} />
@@ -46,7 +48,14 @@ const Resume = ({ data }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
+Resume.propTypes = {
+  data: PropTypes.shape({
+    skills: PropTypes.string.isRequired,
+    experiences: PropTypes.string.isRequired,
+    education: PropTypes.string.isRequired
+  }).isRequired
+};
 export default Resume;

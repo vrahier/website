@@ -1,4 +1,4 @@
-import {colors} from './colors';
+import { colors } from './colors';
 import styled from 'styled-components';
 
 export const SvgButton = styled.svg`
@@ -9,7 +9,7 @@ export const SvgButton = styled.svg`
   &:hover {
     color: ${colors.accent};
   }
-`
+`;
 
 export const Loading = styled.div`
   background:linear-gradient(${colors.loader1}, ${colors.loader2});
@@ -22,4 +22,4 @@ export const Loading = styled.div`
   @keyframes rot {
     100% { transform: rotate(360deg); }
   }
-`
+`;

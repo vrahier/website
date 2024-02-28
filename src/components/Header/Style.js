@@ -1,4 +1,4 @@
-import {colors} from '../../utils/style/colors';
+import { colors } from '../../utils/style/colors';
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
@@ -9,12 +9,12 @@ export const StyledHeader = styled.header`
   height: 56px;
   z-index: 100;
   color: ${colors.menu};
-`
+`;
 
 export const MenuContainer = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 export const Menu = styled.div`
   background: linear-gradient(to bottom, rgb(255, 250, 245) 0%, rgba(255, 250, 245, 0.737) 19%, rgba(255, 250, 245, 0.54) 34%, rgba(255, 250, 245, 0.38) 47%, rgba(255, 250, 245, 0.28) 56.5%, rgba(255, 250, 245, 0.192) 65%, rgba(255, 250, 245, 0.125) 73%, rgba(255, 250, 245, 0.075) 80.2%, rgba(255, 250, 245, 0.043) 86.1%, rgba(255, 250, 245, 0.02) 91%, rgba(255, 250, 245, 0.008) 95.2%, rgba(255, 250, 245, 0.004) 98.2%, rgba(255, 250, 245, 0) 100%);
@@ -27,7 +27,7 @@ export const Menu = styled.div`
   justify-content: space-between;
   font-weight: bold;
   width: 100vw;
-`
+`;
 
 export const MenuItem = styled.div`
   cursor: pointer;
@@ -45,4 +45,4 @@ export const MenuItem = styled.div`
   &:hover:after {
     width: 100%;
   }
-`
+`;

@@ -1,4 +1,4 @@
-import {colors} from '../../utils/style/colors';
+import { colors } from '../../utils/style/colors';
 import styled from 'styled-components';
 
 export const ChangeLanguageButton = styled.button`
@@ -31,4 +31,4 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   color: ${colors.text};
   background: ${colors.footerBackground};
-`
+`;

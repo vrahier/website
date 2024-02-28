@@ -1,19 +1,20 @@
+import React from 'react';
 import { PropTypes } from 'prop-types';
-import {useRef} from 'react';
+import { useRef } from 'react';
 import Contact from '../Contact';
 import Home from '../Home';
-import './index.css';
 import About from '../About';
 import Resume from '../Resume';
+import './index.css';
 
-function Content({ data, currentSection, setCurrentSection}) {
+function Content({ data, currentSection, setCurrentSection }) {
 
   const secHome = useRef();
   const secAbout = useRef();
   const secResume = useRef();
   const secContact = useRef();
 
-  const handleScroll = (e) => {
+  const handleScroll = () => {
     /**
      * Detects which is current section.
     **/
@@ -24,18 +25,18 @@ function Content({ data, currentSection, setCurrentSection}) {
     // Else search for sections which are on the upper side
     // on the screen
     if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
-        scrolled = sections;
+      scrolled = sections;
     } else {
       var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
       scrolled = sections.filter((sec) => {
-        return sec !== undefined && (sec.offsetTop < scrollTop + window.innerHeight / 2)
-      })
+        return sec !== undefined && (sec.offsetTop < scrollTop + window.innerHeight / 2);
+      });
     }
 
     var cur = scrolled.slice(-1)[0];
-    var id = "#" + (cur ? cur.id : "home");
-    if(id && id !== currentSection) {
-      setCurrentSection(id)
+    var id = '#' + (cur ? cur.id : 'home');
+    if (id && id !== currentSection) {
+      setCurrentSection(id);
     }
 
   };
@@ -59,31 +60,17 @@ function Content({ data, currentSection, setCurrentSection}) {
         />
       </div>
     </div>
-  )
+  );
 }
 
 Content.propTypes = {
   data: PropTypes.shape({
     name: PropTypes.string.isRequired,
     firstName: PropTypes.string.isRequired,
-    jobTitle: PropTypes.string,
     email: PropTypes.string,
-    shortPresentation: PropTypes.string,
-    about: PropTypes.string,
-    experiences: PropTypes.array.isRequired,
-    skills: PropTypes.array.isRequired,
-    education: PropTypes.array.isRequired,
-    links: PropTypes.array.isRequired
-  }).isRequired
-}
-Content.defaultProps = {
-  data: {
-    shortPresentation: "",
-    about: "",
-    experiences: [],
-    skills: [],
-    education: [],
-    links: []
-  }
-}
+    links: PropTypes.array.isRequired,
+  }).isRequired,
+  currentSection: PropTypes.string.isRequired,
+  setCurrentSection: PropTypes.func.isRequired,
+};
 export default Content;

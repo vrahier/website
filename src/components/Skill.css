@@ -1,0 +1,9 @@
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 1vh;
+  text-align: left;
+}
+.skill-value {
+  margin-bottom: 3vh;
+  text-align: left;
+}

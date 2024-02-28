@@ -1,17 +1,18 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import './Contact.css'
+import './Contact.css';
 
-function Contact({firstName, name, email, links}){
+function Contact({ firstName, name, email, links }){
   return <div className='contact'>
     <h3>{firstName} {name}</h3>
-    <p><a href={"mailto:" + email}>{email}</a></p>
+    <p><a href={'mailto:' + email}>{email}</a></p>
     <div>
       {links
         .map((l, index) => <a key={index} href={l.url} target="_blank" rel="noreferrer">{l.name}</a>)
-        .reduce((prev, curr) => [prev, " / ", curr])
+        .reduce((prev, curr) => [prev, ' / ', curr])
       }
     </div>
-  </div>
+  </div>;
 }
 
 Contact.propTypes = {

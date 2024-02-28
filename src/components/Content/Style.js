@@ -1,4 +1,4 @@
-import {SvgButton} from '../../utils/style/Atoms';
+import { SvgButton } from '../../utils/style/Atoms';
 import styled from 'styled-components';
 
 export const ScrollDown = styled(SvgButton)`
@@ -13,4 +13,4 @@ export const ScrollDown = styled(SvgButton)`
       transform: translateY(-10px);
     }
   }
-`
+`;

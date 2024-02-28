@@ -1,0 +1,13 @@
+.exp-description {
+  text-align: justify;  
+}
+.exp-more {
+  background: transparent;
+  border: 0;
+  width: fit-content;
+  align-self: center;
+  color: white;
+}
+.exp-more:hover {
+  color: #5493FF;
+}
