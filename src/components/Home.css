@@ -1,0 +1,17 @@
+.home {
+  text-align: center;
+  padding: 10vh 10vw 0 10vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+@media only screen and (min-width: 1008px) {
+  .home {
+    padding: 6vh 25vw 0 25vw;
+    min-height: 94vh;
+  }
+}

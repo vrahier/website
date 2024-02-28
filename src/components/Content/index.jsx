@@ -1,15 +1,13 @@
 import { PropTypes } from 'prop-types';
 import {useRef} from 'react';
 import Contact from '../Contact';
-import { Education, WorkExperience } from '../Experience';
-import Skill from '../Skill';
-import {scrollToDiv} from '../../utils/scroll';
-import {useTranslation} from 'react-i18next';
-import {AboutText, HomeSection, Picture, ScrollDown, Section, SectionsContainer} from './Style';
+import Home from '../Home';
+import './index.css';
+import About from '../About';
+import Resume from '../Resume';
 
 function Content({ data, currentSection, setCurrentSection}) {
 
-  const {t} = useTranslation();
   const secHome = useRef();
   const secAbout = useRef();
   const secResume = useRef();
@@ -42,63 +40,24 @@ function Content({ data, currentSection, setCurrentSection}) {
 
   };
 
-  const handleClick = () => {
-    scrollToDiv("about");
-  };
-
   window.addEventListener('scroll', handleScroll);
 
   return (
     <div onScroll={handleScroll}>
+      <Home data={data} ref={secHome} id="home"/>
 
-      <HomeSection ref={secHome} id="home">
-        <h1>{data.firstName} {data.name}</h1>
-        <h2>{data.jobTitle}</h2>
-        <div>{data.shortPresentation}</div>
-        <div id="scrollContainer">
-          <ScrollDown onClick={handleClick} viewBox="0 0 17 17">
-            <g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 	transform="matrix(0 1 -1 0 17 0)">
-              <circle cx="8.5" cy="8.5" r="8"/>
-              <path d="m11.621 6.379v4.242h-4.242" transform="matrix(.70710678 .70710678 .70710678 -.70710678 	-3.227683 7.792317)"/>
-              <path d="m8.5 4.5v8" transform="matrix(0 1 -1 0 17 0)"/>
-            </g>
-          </ScrollDown>
-        </div>
-      </HomeSection>
-
-      <SectionsContainer>
-        <Section id="about" ref={secAbout} color="#93BDD5">
-          <Picture src="picture.png" alt={"Picture of " + data.firstName + " " + data.name}/>
-          <AboutText>{data.about}</AboutText>
-        </Section>
-
-        <Section id="resume" ref={secResume} color="#B15235">
-          <h2>{t("resume")}</h2>
-          <h3>{t("skills")}</h3>
-          {data.skills.map((skill, index) => (
-            <Skill key={index} skill={skill}/>
-          ))}
-          <h3>{t("workExperience")}</h3>
-          {data.experiences.map((exp, index) => (
-            <WorkExperience key={index} id={index} experience={exp} />
-          ))
-          }
-          <h3>{t("education")}</h3>
-          {data.education.map((edu, index) => (
-            <Education key={index} id={index} education={edu} />
-          ))}
-        </Section>
-
-        <Section id="contact" ref={secContact} color="#D6B4B9">
-          <h2>{t("contact")}</h2>
-          <Contact
-            firstName={data.firstName}
-            name={data.name}
-            email={data.email}
-            links={data.links}
-          />
-        </Section>
-      </SectionsContainer>
+      <div className='sections'>
+        <About data={data} ref={secAbout} id="about"/>
+        <Resume data={data} ref={secResume} id="resume"/>
+        <Contact
+          firstName={data.firstName}
+          name={data.name}
+          email={data.email}
+          links={data.links}
+          id="contact"
+          ref={secContact}
+        />
+      </div>
     </div>
   )
 }

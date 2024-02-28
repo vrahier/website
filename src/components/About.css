@@ -1,0 +1,33 @@
+.about {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	padding-top: 20vh;
+	min-height: 80vh;
+	max-width: 80vw;
+}
+
+.picture {
+  margin-bottom: 10vh;
+  border-radius: 50%;
+  max-width: 178px;
+  border: 1px solid white;
+}
+
+.about-text {
+	text-align: justify;
+}
+
+@media only screen and (min-width: 769px) {
+	.about {
+		max-width: 70vw;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	.about {
+		max-width: 50vw;
+	}
+}

@@ -1,11 +1,6 @@
 import {colors} from '../../utils/style/colors';
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
 export const Description = styled.div`
   display: ${props => props.show ? "block": "none"};
   text-align: justify;

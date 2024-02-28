@@ -9,18 +9,26 @@ export const GlobalStyle = createGlobalStyle`
     background-size: cover;
     background-attachment: fixed;
     color: ${colors.primary};
-    font-size: 18px;
-    @media only screen and (min-width: 769px) {
+    font-size: 15px;
+    @media only screen and (min-width: 1025px) {
       font-size: 20px;
     }
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 40px;
+
+    @media only screen and (min-width: 1025px) {
+      font-size: 60px;
+    }
   }
 
   h2 {
-    font-size: 25px;
+    font-size: 20px;
+
+    @media only screen and (min-width: 1025px) {
+      font-size: 25px;
+    }
   }
 
   a {

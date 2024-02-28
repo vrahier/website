@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {PropTypes} from 'prop-types';
-import {Container, Description, MoreButton} from './Style';
+import { Description, MoreButton} from './Style';
 import {useTranslation} from 'react-i18next';
 
 function Experience({id, title, company, fromDate, toDate, location, description}) {
@@ -17,7 +17,7 @@ function Experience({id, title, company, fromDate, toDate, location, description
 
   const handleClick = () => setShowDescription(!showDescription);
 
-  return <Container>
+  return <div>
         <h3>{title}</h3>
         <div>{company}</div>
         <div>{fromDate}{ toDate && "-" + toDate }</div>
@@ -31,7 +31,7 @@ function Experience({id, title, company, fromDate, toDate, location, description
           </>
          )
        }
-    </Container>
+    </div>
 }
 
 Experience.propTypes = {

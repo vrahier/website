@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import './Contact.css'
 
 function Contact({firstName, name, email, links}){
-  return <>
+  return <div className='contact'>
     <h3>{firstName} {name}</h3>
     <p><a href={"mailto:" + email}>{email}</a></p>
     <div>
@@ -10,7 +11,7 @@ function Contact({firstName, name, email, links}){
         .reduce((prev, curr) => [prev, " / ", curr])
       }
     </div>
-  </>
+  </div>
 }
 
 Contact.propTypes = {
