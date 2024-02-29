@@ -8,6 +8,18 @@
   align-items: center;
   color: white;
 }
+.scroll-down {
+  animation: MoveUpDown 1s linear infinite;
+  margin-top: 30vh;
+}
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 @media only screen and (min-width: 1008px) {
   .home {

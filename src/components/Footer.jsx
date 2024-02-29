@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
-import { ChangeLanguageButton, StyledFooter } from './Style';
 import { useTranslation } from 'react-i18next';
-import { scrollToDiv } from '../../utils/scroll';
+import { scrollToDiv } from '../utils/scroll';
+import './Footer.css';
 
 function Footer({ data }) {
   const { i18n, } = useTranslation();
@@ -27,7 +27,7 @@ function Footer({ data }) {
     });
   }, []);
 
-  return <StyledFooter>
+  return <footer className='footer'>
     {
       data.extraFooter.map((e, index) => <div key={index}>{e}</div>)
     }
@@ -36,11 +36,11 @@ function Footer({ data }) {
         availableLng
           .filter((l) => l.locale !== i18n.language)
           .map((l, index) => (
-            <ChangeLanguageButton key={index} onClick={handleClick} value={l.locale}>{l.name}</ChangeLanguageButton>
+            <button className='footer-language' key={index} onClick={handleClick} value={l.locale}>{l.name}</button>
           ))}
     </div>
     <div>© {new Date().getFullYear()} {data.firstName} {data.name}</div>
-  </StyledFooter>;
+  </footer>;
 }
 
 Footer.propTypes = {

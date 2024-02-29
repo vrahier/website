@@ -1,7 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { SvgButton } from '../utils/style/Atoms';
 import { Education, WorkExperience } from './Experience';
 import Skill from './Skill';
 import './Resume.css';
@@ -26,13 +25,13 @@ const Resume = ({ data }) => {
           {data.experiences.map((exp, index) => (
             <div key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'right', gap: '1vw' }}>
               <WorkExperience key={index} id={index} experience={exp} />
-              <SvgButton viewBox="0 0 17 17">
+              <svg className='svg-button' viewBox="0 0 17 17">
                 <g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 	transform="matrix(0 1 -1 0 17 0)">
                   <circle cx="8.5" cy="8.5" r="8"/>
                   <path d="m8.5 4.5v8" />
                   <path d="m8.5 4.5v8" transform="matrix(0 1 -1 0 17 0)"/>
                 </g>
-              </SvgButton>
+              </svg>
             </div>
           ))
           }

@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background: url('~/public/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: black;
+  font-size: 15px;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 20px;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: #5493FF;
+}
+.svg-button {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.svg-button:hover {
+  color: #5493FF;
+}
+
+@media only screen and (min-width: 1025px) {
+  body {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+}

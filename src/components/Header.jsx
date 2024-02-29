@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { scrollToDiv } from '../../utils/scroll';
-import { Menu, MenuContainer, MenuItem, StyledHeader } from './Style';
+import { scrollToDiv } from '../utils/scroll';
 import { useTranslation } from 'react-i18next';
+import './Header.css';
 
 function Header({ currentSection }) {
 
@@ -26,20 +26,21 @@ function Header({ currentSection }) {
   };
 
   return (
-    <StyledHeader>
-      <MenuContainer>
-        <Menu>
+    <header className='header'>
+      <div className='header-container'>
+        <div className='header-menu'>
           { menuItems.map((item, index) => (
-            <MenuItem
+            <div className={`header-menu-item ${'#' + item[0] === currentSection}`}
               key={index}
               id={'#' + item[0]}
-              active={'#' + item[0] === currentSection}
               onClick={handleClick}
-            >{item[1]}</MenuItem>
+            >
+              {item[1]}
+            </div>
           ))}
-        </Menu>
-      </MenuContainer>
-    </StyledHeader>
+        </div>
+      </div>
+    </header>
   );
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useRef } from 'react';
-import Contact from '../Contact';
-import Home from '../Home';
-import About from '../About';
-import Resume from '../Resume';
-import './index.css';
+import Contact from './Contact';
+import Home from './Home';
+import About from './About';
+import Resume from './Resume';
+import './Content.css';
 
 function Content({ data, currentSection, setCurrentSection }) {
 
