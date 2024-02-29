@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  background: url('~/public/background.jpg');
+  background-image: url('/background.jpg');
   background-size: cover;
   background-attachment: fixed;
-  color: white;
+  color: black;
   font-size: 15px;
 }
 h1 {
@@ -16,17 +16,6 @@ a {
   color: white;
 }
 a:hover {
-  color: #5493FF;
-}
-button {
-  color: white;
-}
-.svg-button {
-  height: 30px;
-  width: 30px;
-  cursor: pointer;
-}
-.svg-button:hover {
   color: #5493FF;
 }
 
