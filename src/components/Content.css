@@ -1,3 +1,44 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  z-index: 100;
+  color: black;
+}
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+.header-menu {
+  background: linear-gradient(to bottom, rgb(255, 250, 245) 0%, rgba(255, 250, 245, 0.737) 19%, rgba(255, 250, 245, 0.54) 34%, rgba(255, 250, 245, 0.38) 47%, rgba(255, 250, 245, 0.28) 56.5%, rgba(255, 250, 245, 0.192) 65%, rgba(255, 250, 245, 0.125) 73%, rgba(255, 250, 245, 0.075) 80.2%, rgba(255, 250, 245, 0.043) 86.1%, rgba(255, 250, 245, 0.02) 91%, rgba(255, 250, 245, 0.008) 95.2%, rgba(255, 250, 245, 0.004) 98.2%, rgba(255, 250, 245, 0) 100%);
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  width: 100vw;
+}
+.header-menu-item {
+  cursor: pointer;
+}
+.header-menu-item::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: black;
+  margin-top: 5px;
+  transition: width .4s ease-in;
+}
+.header-menu-item-active::after,
+.header-menu-item:hover::after {
+  width: 100%;
+}
 .sections {
     width: 100%;
     background: #00000085;

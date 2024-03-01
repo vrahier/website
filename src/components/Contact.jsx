@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Contact.css';
 
-function Contact({ firstName, name, email, links }){
-  return <div className='contact'>
+const Contact = React.forwardRef(function Conact({ firstName, name, email, links }, ref){
+  return <div className='contact' ref={ref}>
     <h3>{firstName} {name}</h3>
     <p><a href={'mailto:' + email}>{email}</a></p>
     <div>
@@ -13,7 +13,7 @@ function Contact({ firstName, name, email, links }){
       }
     </div>
   </div>;
-}
+});
 
 Contact.propTypes = {
   firstName: PropTypes.string.isRequired,

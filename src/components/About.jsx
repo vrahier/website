@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './About.css';
 
-const About = ({ data }) => {
+const About =  React.forwardRef(function About({ data }, ref) {
   
   return (
-    <div className='about'>
+    <div className='about' ref={ref}>
       <img
         className='picture'
         src="picture.png"
@@ -14,7 +14,7 @@ const About = ({ data }) => {
       <div className='about-text'>{data.about}</div>
     </div>
   );
-};
+});
 
 About.propTypes = {
   data: PropTypes.shape({

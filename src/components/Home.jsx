@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { scrollToDiv } from '../utils/scroll';
 import './Home.css';
 
-const Home = ({ data }) => {
-    
+const Home = React.forwardRef(function Home({ data, aboutRef }, ref) {
+
   const handleClick = () => {
-    scrollToDiv('about');
+    aboutRef.current.scrollIntoView({
+      behavior: 'smooth',
+    });
   };
   
   return (
-    <div className='home'>
+    <div className='home' ref={ref}>
       <h1>{data.firstName} {data.name}</h1>
       <h2>{data.jobTitle}</h2>
       <div>{data.shortPresentation}</div>
@@ -25,7 +26,7 @@ const Home = ({ data }) => {
       </div>
     </div>
   );
-};
+});
 
 Home.propTypes = {
   data: PropTypes.shape({
@@ -33,6 +34,7 @@ Home.propTypes = {
     name: PropTypes.string.isRequired,
     jobTitle: PropTypes.string.isRequired,
     shortPresentation: PropTypes.string.isRequired,
-  }).isRequired
+  }).isRequired,
+  aboutRef: PropTypes.object,
 };
 export default Home;

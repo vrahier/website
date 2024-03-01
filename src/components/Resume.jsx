@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Education, WorkExperience } from './Experience';
 import Skill from './Skill';
 import './Resume.css';
 
-const Resume = ({ data }) => {
+const Resume = React.forwardRef(function Resume({ data }, ref) {
   const { t } = useTranslation();
+  const [titleClasses, setTitleClasses] = useState(['title']);
+
+  const onClick = () => {
+    if (!titleClasses.includes('title-hidden')) {
+      setTitleClasses(['title-hidden']);
+    } else {
+      setTitleClasses(['title']);
+    }
+  };
   
   return (
-    <div className='resume'>
+    <div className='resume' ref={ref}>
       <div className='sub-section'>
         <h1 className='title title-left'>{t('skills')}</h1>
         <div className='content'>
@@ -20,12 +29,12 @@ const Resume = ({ data }) => {
       </div>
 
       <div className='sub-section reverse'>
-        <h1 className='title'>{t('workExperience')}</h1>
+        <h1 className={titleClasses.join(' ')}>{t('workExperience')}</h1>
         <div className='content content-left'>
           {data.experiences.map((exp, index) => (
-            <div key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'right', gap: '1vw' }}>
-              <WorkExperience key={index} id={index} experience={exp} />
-              <svg className='svg-button' viewBox="0 0 17 17">
+            <div className='exp-content' key={index}>
+              <WorkExperience id={index} experience={exp} />
+              <svg onClick={onClick} className='svg-button' viewBox="0 0 17 17">
                 <g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 	transform="matrix(0 1 -1 0 17 0)">
                   <circle cx="8.5" cy="8.5" r="8"/>
                   <path d="m8.5 4.5v8" />
@@ -48,7 +57,7 @@ const Resume = ({ data }) => {
       </div>
     </div>
   );
-};
+});
 
 Resume.propTypes = {
   data: PropTypes.shape({
